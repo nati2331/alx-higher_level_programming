@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <stddef.h>
 /**
 *add_nodeint - it is a function that adds a new node.
 *@head: It is the head of listint_t
