@@ -3,7 +3,7 @@
 
 /**
  * dlistint_len - Function that counts the length of the list.
- * h - head of doubly linked list
+ * @h - head of doubly linked list
  *
  * Return - Yeilds the total number of nodes.
  */

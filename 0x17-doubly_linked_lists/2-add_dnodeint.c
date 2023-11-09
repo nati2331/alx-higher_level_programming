@@ -3,8 +3,8 @@
 
 /**
  * add_dnodeint - Funtion adds new element at beginiing.
- * headv - it is pointer a pointer to the address of node.
- * n - variable for element in the list.
+ * @head - it is pointer a pointer to the address of node.
+ * @n - variable for element in the list.
  * Return - new element.
  */
 
