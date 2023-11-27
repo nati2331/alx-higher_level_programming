@@ -8,7 +8,7 @@ def matrix_divided(matrix, div):
     """
     Args:
         matrix: A list of lists of integers or floats.
-        div  divisor.
+        div: divisor.
     Raises:
         TypeError: If the matrix contains non-numbers.
         TypeError: If div is not an int or float.

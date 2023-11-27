@@ -1,0 +1,11 @@
+#A class of say_my_name is created
+Raises:
+	TypeError: If first name and last name are not string.
+
+say_my_name(["Jon"],"T")
+Traceback: (most recent call last):
+TypeError: first name must be a string
+
+say_my_name("bob",21)
+Traceback: (most recent call last):
+TypeError: last name must be a string

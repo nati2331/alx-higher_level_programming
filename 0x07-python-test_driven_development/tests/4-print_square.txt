@@ -1,0 +1,15 @@
+#Created a class that creates squares
+
+	Args:
+		size: int foor  height/width of the square.
+	Raises:
+        	TypeError: If size is not an int.
+		ValueError: If size is less than 0
+
+	print_square(5,a)
+	Traceback (most recent call last)
+	TypeError: size must be integer
+
+	print_square(5,-1)
+        Traceback (most recent call last)
+        TypeError: size must be > 0.

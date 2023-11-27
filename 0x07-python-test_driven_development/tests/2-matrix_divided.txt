@@ -1,0 +1,27 @@
+This module uses the matrix_divided
+
+ matrix_divided(matrix, div):
+    """
+    Args:
+        matrix: A list of lists of integers or floats.
+        div  divisor.
+    Raises:
+        TypeError: If the matrix contains non-numbers.
+        TypeError: If div is not an int or float.
+        ZeroDivisionError: If div is 0.
+    """
+
+	matrix = [[1,2,3],a]
+	matrix_divided(matrix,a)
+	Traceback (most recent call last)
+	TypeError: matrix must be a matrix (list of lists) of ints/floats
+
+matrix = [[1,2,3],apple]
+        matrix_divided(matrix,apple)
+        Traceback (most recent call last)
+        TypeError: Divisor is not an ints/float.
+
+matrix = [[1,2,3],0]
+        matrix_divided(matrix,0)
+        Traceback (most recent call last)
+        TypeError: Divisor is 0.

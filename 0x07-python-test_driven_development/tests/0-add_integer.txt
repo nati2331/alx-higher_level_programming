@@ -1,0 +1,12 @@
+#0-add_integer.txt
+
+This module takes two integers/floats as arguments and returns their sum
+
+	>>>add_integer returns the addition of its arguments
+It returns the result interms of ints incase their is floats.
+
+Non-numbers should throw TypeError exceptions
+
+	>>> add_integer ('b', 5)
+	>>> Traceback (most recent call last):
+	>>> TypeError: b must be an integer
