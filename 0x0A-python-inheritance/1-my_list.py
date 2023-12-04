@@ -10,6 +10,9 @@ class MyList(list):
         This list is supposed to only contain integers.
     """
 
+    def __init__(self):
+        super().__init__()
+
     def print_sorted(self):
         """
             Prints MyList lists in ascending order.
