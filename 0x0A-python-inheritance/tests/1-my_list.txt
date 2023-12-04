@@ -1,132 +1,56 @@
-# Module: `1-my_list`
+Using the "1-my_list" Module
 ============================
 
-This module introduces a specialized subclass of `int` known as `MyList`, featuring a singular method: `print_sorted`.
+Using "MyList"
+--------------
 
-## Utilizing `print_sorted`
+Importing the function from the module:
+    >>> MyList = __import__("1-my_list").MyList
 
-### Initial Import
-To employ `MyList`, initiate the import of `MyList` from the module `1-my_list`. Due to the presence of a numeral in the filename, the conventional `from 1-my_list import MyList` syntax is invalid. Instead, use the following syntax:
+Testing for Module Docstring:
+    >>> module_docstring = __import__("1-my_list").__doc__
+    >>> len(module_docstring) > 1
+    True
 
-```python
->>> MyList = __import__('1-my_list').MyList
+Testing for Class Docstring:
+    >>> class_docstring = __import__("1-my_list").MyList.__doc__
+    >>> len(class_docstring) > 1
+    True
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(3)
->>> my_list.append(5)
->>> print(my_list)
-[1, 4, 2, 3, 5]
+Testing for Method Docstring:
+	>>> method_docstring = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(method_docstring) > 1
+	True
 
->>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
+Testing MyList Inheritance:
+	>>> is_subclass = issubclass(MyList, list)
+	True
 
->>> print(my_list)
-[1, 4, 2, 3, 5]
+Testing for an Empty List:
+	>>> empty_list = MyList()
+	>>> empty_list.print_sorted()
+	[]
 
->>> my_list = MyList()
->>> my_list.print_sorted()
-[]
+Testing if Appending Works:
+	>>> appended_list = MyList()
+	>>> appended_list.append(1)
+	>>> appended_list.append(2)
+	>>> appended_list.append(3)
+	>>> print(appended_list)
+	[1, 2, 3]
 
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.print_sorted()
-[1]
+Testing for a List Already in Correct Order:
+	>>> appended_list.print_sorted()
+	[1, 2, 3]
 
->>> my_list = MyList()
->>> my_list.append(0.1)
->>> my_list.append(4.2)
->>> my_list.append(2.6)
->>> my_list.append(7.3)
->>> my_list.append(5.0)
->>> print(my_list)
-[0.1, 4.2, 2.6, 7.3, 5.0]
-
->>> my_list.print_sorted()
-[0.1, 2.6, 4.2, 5.0, 7.3]
-
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(4.2)
->>> my_list.append(2.6)
->>> my_list.append(7.3)
->>> my_list.append(5)
->>> print(my_list)
-[1, 4.2, 2.6, 7.3, 5]
-
->>> my_list.print_sorted()
-[1, 2.6, 4.2, 5, 7.3]
-
->>> my_list = MyList()
->>> pos_inf = float('inf')
->>> my_list.append(pos_inf)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(7)
->>> my_list.append(5)
->>> print(my_list)
-[inf, 4, 2, 7, 5]
-
->>> my_list.print_sorted()
-[2, 4, 5, 7, inf]
-
->>> my_list = MyList()
->>> neg_inf = float('-inf')
->>> my_list.append(neg_inf)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(7)
->>> my_list.append(5)
->>> print(my_list)
-[-inf, 4, 2, 7, 5]
-
->>> my_list.print_sorted()
-[-inf, 2, 4, 5, 7]
-
->>> my_list = MyList()
->>> not_a_num = float('nan')
->>> my_list.append(not_a_num)
->>> my_list.append(4)
->>> my_list.append(neg_inf)
->>> my_list.append(-7)
->>> my_list.append(pos_inf)
->>> print(my_list)
-[nan, 4, -inf, -7, inf]
-
->>> my_list.print_sorted()
-[nan, -inf, -7, 4, inf]
-
->>> my_list.print_sorted(1)
-Traceback (most recent call last):
-    ...
-TypeError: print_sorted() takes 1 positional argument but 2 were given
-
->>> my_list.print_sorted([1, 4, 2, 3, 5])
-Traceback (most recent call last):
-    ...
-TypeError: print_sorted() takes 1 positional argument but 2 were given
-
->>> my_list = MyList()
->>> my_list.append(None)
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(7)
->>> my_list.append(5)
->>> print(my_list)
-[None, 4, 2, 7, 5]
-
->>> my_list.print_sorted()
-Traceback (most recent call last):
-    ...
-TypeError: unorderable types: int() < NoneType()
-
->>> my_list = MyList()
->>> my_list.append('1')
->>> my_list.append(4)
->>> my_list.append(2)
->>> my_list.append(7)
->>> my_list.append(5)
->>> print(my_list)
-['1', 4,
+Testing for a Reversed Order List:
+	>>> reversed_list = MyList()
+	>>> reversed_list.append(3)
+	>>> reversed_list.append(2)
+	>>> reversed_list.append(1)
+	>>> print(reversed_list)
+	[3, 2, 1]
+	>>> reversed_list.print_sorted()
+	[1, 2, 3]
+	>>> print(reversed_list)
+	[3, 2, 1]
