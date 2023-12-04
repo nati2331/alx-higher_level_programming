@@ -1,0 +1,87 @@
+Utilizing the "7-base_geometry" Module
+======================
+
+Importing the function from the module:
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Testing for Module Docstring:
+>>> module_docstring = __import__("7-base_geometry").__doc__
+>>> len(module_docstring) > 1
+True
+
+Testing for Class Docstring:
+>>> class_docstring = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(class_docstring) > 1
+True
+
+Testing for Method Docstrings:
+>>> method_docstring_area = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(method_docstring_area) > 1
+True
+
+>>> method_docstring_validator = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(method_docstring_validator) > 1
+True
+
+Testing for Area Failure:
+>>> base_geometry_instance = BaseGeometry()
+>>> base_geometry_instance.area()
+Traceback (most recent call last):
+  ...
+Exception: area() is not implemented
+
+Testing Too Many Arguments for Area:
+>>> base_geometry_instance.area(1)
+Traceback (most recent call last):
+  ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+Testing Integer Validator for Passing Integer:
+>>> base_geometry_instance.integer_validator("integer", 1)
+
+Testing for Integer == 0:
+>>> base_geometry_instance.integer_validator("integer", 0)
+Traceback (most recent call last):
+  ...
+ValueError: integer must be greater than 0
+
+Testing for Integer < 0:
+>>> base_geometry_instance.integer_validator("integer", -5)
+Traceback (most recent call last):
+  ...
+ValueError: integer must be greater than 0
+
+Testing for Non-Integer Types:
+>>> base_geometry_instance.integer_validator("bool", True)
+Traceback (most recent call last):
+  ...
+TypeError: bool must be an integer
+
+>>> base_geometry_instance.integer_validator("float", 1.5)
+Traceback (most recent call last):
+  ...
+TypeError: float must be an integer
+
+>>> base_geometry_instance.integer_validator("complex", complex(1, 1))
+Traceback (most recent call last):
+  ...
+TypeError: complex must be an integer
+
+Testing for No Arguments to Integer Validator:
+>>> base_geometry_instance.integer_validator()
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Testing for Only 1 Argument to Integer Validator:
+>>> base_geometry_instance.integer_validator("integer")
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Testing for Too Many Arguments:
+>>> base_geometry_instance.integer_validator("integer", 1, 2)
+Traceback (most recent call last):
+  ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
