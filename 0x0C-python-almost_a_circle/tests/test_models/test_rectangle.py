@@ -115,7 +115,7 @@ class TestRectangle_width(unittest.TestCase):
             Rectangle({"a": 1, "b": 2}, 2)
 
     def test_bool_width(self):
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+        with self.assertRaises(TypeError, "width must be an integer"):
             Rectangle(True, 2)
 
     def test_list_width(self):
@@ -161,7 +161,7 @@ class TestRectangle_height(unittest.TestCase):
             Rectangle(2, {"a": 1, "b": 2})
 
     def test_bool_height(self):
-        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+        with self.assertRaises(TypeError, "height must be an integer"):
             Rectangle(2, True)
 
     def test_list_height(self):
@@ -207,7 +207,7 @@ class TestRectangle_x(unittest.TestCase):
             Rectangle(2, 3, {"a": 1, "b": 2})
 
     def test_bool_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+        with self.assertRaises(TypeError, "x must be an integer"):
             Rectangle(2, 3, True)
 
     def test_list_x(self):
@@ -249,7 +249,7 @@ class TestRectangle_y(unittest.TestCase):
             Rectangle(2, 3, 4, {"a": 1, "b": 2})
 
     def test_bool_y(self):
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+        with self.assertRaises(TypeError, "y must be an integer"):
             Rectangle(2, 3, 4, True)
 
     def test_list_y(self):

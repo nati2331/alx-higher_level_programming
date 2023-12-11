@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""creating class square"""
+
+"""
+    creating class square
+"""
 
 
 from inspect import classify_class_attrs
@@ -19,6 +22,26 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
+
+    def update(self, *args, **kwargs):
+    """        
+        Initalization
+
+        Attributes:
+            width (int): width of rectangle.
+            height (int): height of rectangle.
+            x (int): x.
+            y (int): y.
+            id (int): id of square.
+    """
+       
+       attribute_names = ["id", "size", "x", "y"]
+        for i in range(min(len(attribute_names), len(args))):
+            setattr(self, attribute_names[i], args[i])
+
+        for key, value in kwargs.items():
+            if key in attribute_names:
+                setattr(self, key, value)
 
     def __str__(self):
         return ("[Square] ({}) {:d}/{:d} - {:d}".

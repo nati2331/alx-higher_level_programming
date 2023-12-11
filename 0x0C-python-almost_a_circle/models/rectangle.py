@@ -5,7 +5,6 @@
 
 from models.base import Base
 
-
 class Rectangle(Base):
     """
         Task 2 to 13 are solved by inheritance
